@@ -100,7 +100,7 @@ public class SessionVariable implements Serializable, Writable, Cloneable {
     public static final String PREFER_COMPUTE_NODE = "prefer_compute_node";
     // The schedule policy of backend and compute node.
     // The optional values are "compute_nodes_only" and "all_nodes".
-    public static final String COMPUTATION_SRAGMENT_SCHEDULING_POLICY = "computation_sragment_scheduling_policy";
+    public static final String COMPUTATION_FRAGMENT_SCHEDULING_POLICY = "computation_fragment_scheduling_policy";
     public static final String EXEC_MEM_LIMIT = "exec_mem_limit";
 
     /**
@@ -786,8 +786,8 @@ public class SessionVariable implements Serializable, Writable, Cloneable {
     @VariableMgr.VarAttr(name = PREFER_COMPUTE_NODE)
     private boolean preferComputeNode = false;
 
-    @VariableMgr.VarAttr(name = COMPUTATION_SRAGMENT_SCHEDULING_POLICY)
-    private String computationSragmentSchedulingPolicy = "compute_nodes_only";
+    @VariableMgr.VarAttr(name = COMPUTATION_FRAGMENT_SCHEDULING_POLICY)
+    private String computationFragmentSchedulingPolicy = "compute_nodes_only";
 
     @VariableMgr.VarAttr(name = LOG_REJECTED_RECORD_NUM)
     private long logRejectedRecordNum = 0;
@@ -2179,12 +2179,12 @@ public class SessionVariable implements Serializable, Writable, Cloneable {
         this.preferComputeNode = preferComputeNode;
     }
 
-    public void setComputationSragmentSchedulingPolicy(String computationSragmentSchedulingPolicy) {
-        this.computationSragmentSchedulingPolicy = computationSragmentSchedulingPolicy;
+    public void setComputationFragmentSchedulingPolicy(String computationFragmentSchedulingPolicy) {
+        this.computationFragmentSchedulingPolicy = computationFragmentSchedulingPolicy;
     }
 
-    public String getComputationSragmentSchedulingPolicy() {
-        return computationSragmentSchedulingPolicy;
+    public String getComputationFragmentSchedulingPolicy() {
+        return computationFragmentSchedulingPolicy;
     }
 
     public boolean enableHiveColumnStats() {
